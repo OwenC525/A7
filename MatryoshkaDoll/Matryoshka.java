@@ -46,7 +46,7 @@ public class Matryoshka {
         StdDraw.circle(headX, headY, headRadius);
 
         //draw face
-        drawFace(headX, headY, headRadius);
+        drawFace(headX, headY, radius);
     }
 
      /**
@@ -73,7 +73,7 @@ public class Matryoshka {
         double nextX = x + r + nextRadius;
         double nextY = y;
 
-        stackDolls(nextX, nextY, r, dolls - 1);
+        stackDolls(nextX, nextY, nextRadius, dolls - 1);
         }
     }
 
@@ -84,6 +84,12 @@ public class Matryoshka {
      * @param args command-line arguments
      */
     public static void main(String[] args){
-        //WRITE YOUR CODE HERE
+        int numberOfDolls = Integer.parseInt(args[0]);
+
+        double startX = 0.1;
+        double startY = 0.1;
+        double startRadius = 0.1;
+
+        stackDolls(startX, startY, startRadius, numberOfDolls);
     }
 }
