@@ -33,7 +33,20 @@ public class Matryoshka {
      * @param  radius the radius of the doll's body
      */
     public static void drawDoll(double x, double y, double radius){
-        //WRITE YOUR CODE HERE
+        //draw body
+        StdDraw.setPenColor(Color.black);
+        StdDraw.circle(x, y, radius);
+
+        // head
+        double headRadius = radius / 2.0;
+        double headX = x;
+        double headY = y + radius +headRadius;
+
+        //draw head
+        StdDraw.circle(headX, headY, headRadius);
+
+        //draw face
+        drawFace(headX, headY, headRadius);
     }
 
      /**
