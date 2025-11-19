@@ -60,7 +60,21 @@ public class Matryoshka {
      * @param dolls the number of dolls to be drawn in succession
      */
     public static void stackDolls(double x, double y, double r, int dolls){
-        //WRITE YOUR CODE HERE
+        if (dolls <= 0) {
+            return;
+        }
+
+        drawDoll(x, y, r);
+
+        if (dolls > 1) {
+            double nextRadius = r * 5.0 / 7.0;
+        
+
+        double nextX = x + r + nextRadius;
+        double nextY = y;
+
+        stackDolls(nextX, nextY, r, dolls - 1);
+        }
     }
 
     /**
